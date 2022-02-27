@@ -1,1 +1,3 @@
 # CS1710-Baseball-Model
+
+Our forge program models a half-inning of a baseball game, which could easily be expanded to simulate an entire game.  For someone unfamiliar to the game, there are two teams, one on offense and one on defense.  The players on the offensive team take turns going to bat, where they can  either get a hit, walk, or get an out.  In order to score a run (point) a player must get on base via a walk or a hit and then make it around all the bases when other players on their team get a walk or a hit.  For simplicity's sake, we are assuming that a baserunner always moves the same number of bases as the player at bat, and that no baserunners can move on an out.  Once the batting team gets three outs, the inning is over.
