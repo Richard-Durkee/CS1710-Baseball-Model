@@ -27,3 +27,9 @@ pred leadOff[ab: AtBat]{
     all base: Base | no base.runner[ab]
     
 }
+
+pred lastBatter[last: AtBat]{
+    no b: AtBat | last.next=b
+    all b: AtBat | {b.next=last implies b.outs<3}
+    last.outs=3
+}
