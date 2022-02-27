@@ -1,8 +1,20 @@
 #lang forge/bsl
 
-sig Inning{
-
+sig AtBat{
+    outs: one Int
+    batter: one Player
+    runs: one Int
 }
+
+abstract sig Base{
+    runner: pfunc AtBat -> Player
+    next: one Base
+}
+
+one sig 1stBase extends Base{}
+one sig 2ndBase extends Base{}
+one sig 3rdBase extends Base{}
+one sig HomePlate extends Base{}
 
 sig Player{}
 
