@@ -4,6 +4,7 @@ sig AtBat{
     outs: one Int
     batter: one Player
     runs: one Int
+    next: lone AtBat
 }
 
 abstract sig Base{
@@ -14,10 +15,15 @@ abstract sig Base{
 one sig 1stBase extends Base{}
 one sig 2ndBase extends Base{}
 one sig 3rdBase extends Base{}
-one sig HomePlate extends Base{}
 
 sig Player{}
 
 abstract sig Team{}
 one sig Offense extends Team{}
 one sig Defense extends Team{}
+
+pred leadOff[ab: AtBat]{
+    no b: AtBat | b.next=ab
+    all base: Base | no base.runner[ab]
+    
+}
